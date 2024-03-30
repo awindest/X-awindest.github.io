@@ -1,0 +1,224 @@
+@import "open-props/style";
+/* Adam Argyle's wonderful set of CSS variables */
+@import 'reset.css';
+@import "baseline.css";
+@import "variables.css";
+@import "normalize.css";
+
+
+@font-face {
+	font-family: "Averox";
+	src: url("/fonts/Averox-webfont.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "manifold-extended-cf";
+	src: url("/fonts/ManifoldExtendedCF-Regular.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+}
+
+
+/* colors defined in variables.css */
+:root {
+
+	--sans: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+	--serif: Iowan Old Style, Times New Roman, Times, serif;
+	--mono: Menlo, Consolas, Monaco, monospace;
+
+	--font-header: "forma-djr-display", var(--sans);
+	--font-subheader: "forma-djr-deck", var(--sans);
+	--font-body: "forma-djr-text", var(--sans);
+	--font-decorative: "manifold-extended-cf", var(--mono);
+
+	--z-bottom: -100;
+	--z-middle: 0;
+	--z-top: 100;
+	--z-overlay: 1000;
+
+	--color-black: #000000;
+
+
+	/* --color-thumb: var(--color-gray-400); */
+	--color-thumb: var(--gray-4);
+	/* --color-track: var(--color-gray-50); */
+	--color-track: var(--gray-0);
+
+	--color-bg: var(--gray-0);
+	/* --color-fg: var(--color-gray-900); */
+	--color-fg: var(--gray-9);
+	--color-primary: var(--color-black);
+	--color-link: var(--color-black);
+	--color-focus: var(--red-7);
+	--color-mark: var(--yellow-3);
+	/* --color-selection: var(--color-gray-300); */
+	--color-selection: var(--gray-3);
+	/* --color-border: var(--color-gray-300); */
+	--color-border: var(--gray-3);
+	/* --color-button-bg: var(--color-gray-300); */
+	--color-button-bg: var(--gray-3);
+	/* --color-button-fg: var(--color-gray-900);  */
+	--color-button-fg: var(--gray-9);
+	/* --color-button-hover: var(--color-gray-400); */
+	--color-button-hover: var(--gray-4);
+	/* --color-input-bg: var(--color-gray-50); */
+	--color-input-bg: var(--gray-0);
+	/* --color-input-fg: var(--color-gray-900); */
+	--color-input-fg: var(--gray-9);
+	/* --color-placeholder: var(--color-gray-500); */
+	--color-placeholder: var(--gray-5);
+
+
+
+	/* shadows */
+	--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+	--shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+	--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+	--shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+		0 4px 6px -4px rgb(0 0 0 / 0.1);
+	--shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+		0 8px 10px -6px rgb(0 0 0 / 0.1);
+	--shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+	--shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+
+
+	--color-green: hsl(159, 74%, 18%);
+	--color-mint-green: hsl(124, 19%, 58%);
+	/* --color-light-green: hsl(124, 19%, 88%); */
+	--color-dark-green: hsl(153, 15%, 36%);
+	--color-light-green: hsl(124, 29%, 66%);
+
+	--color-dark-blue: hsl(202, 96%, 52%);
+	--color-blue: hsl(202, 80%, 72%);
+	--color-light-blue: hsl(184, 98%, 51%);
+	--color-lighter-blue: hsl(184, 99%, 91%);
+	--color-light-sky-blue: hsl(210, 73%, 47%);
+	/* for the sky gradient */
+	--color-sky-blue: hsl(211, 91%, 37%);
+
+	/* for the sky gradient */
+	--text-border-color: var(--gray-0);
+
+	--text-border: var(--text-border-color) 4px 0px 0px,
+		var(--text-border-color) 3.87565px 0.989616px 0px,
+		var(--text-border-color) 3.51033px 1.9177px 0px,
+		var(--text-border-color) 2.92676px 2.72656px 0px,
+		var(--text-border-color) 2.16121px 3.36588px 0px,
+		var(--text-border-color) 1.26129px 3.79594px 0px,
+		var(--text-border-color) 0.282949px 3.98998px 0px,
+		var(--text-border-color) -0.712984px 3.93594px 0px,
+		var(--text-border-color) -1.66459px 3.63719px 0px,
+		var(--text-border-color) -2.51269px 3.11229px 0px,
+		var(--text-border-color) -3.20457px 2.39389px 0px,
+		var(--text-border-color) -3.69721px 1.52664px 0px,
+		var(--text-border-color) -3.95997px 0.56448px 0px,
+		var(--text-border-color) -3.97652px -0.432781px 0px,
+		var(--text-border-color) -3.74583px -1.40313px 0px,
+		var(--text-border-color) -3.28224px -2.28625px 0px,
+		var(--text-border-color) -2.61457px -3.02721px 0px,
+		var(--text-border-color) -1.78435px -3.57996px 0px,
+		var(--text-border-color) -0.843183px -3.91012px 0px,
+		var(--text-border-color) 0.150409px -3.99717px 0px,
+		var(--text-border-color) 1.13465px -3.8357px 0px,
+		var(--text-border-color) 2.04834px -3.43574px 0px,
+		var(--text-border-color) 2.83468px -2.82216px 0px,
+		var(--text-border-color) 3.44477px -2.03312px 0px,
+		var(--text-border-color) 3.84068px -1.11766px 0px,
+		var(--text-border-color) 3.9978px -0.132717px 0px;
+
+	--shadow-color: 211deg 11% 62%;
+	--shadow-elevation-low:
+		0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+		0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
+		1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
+	--shadow-elevation-medium:
+		0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+		0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+		2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+		5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+	--shadow-elevation-high:
+		0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+		1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
+		2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
+		4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
+		7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
+		11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
+		17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
+		25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
+}
+
+
+
+a {
+	border: none;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	color: var(--gray-8);
+	background-color: var(--gray-0);
+}
+
+@media (min-width: 500px) {
+	html {
+		scrollbar-color: var(--color-thumb) var(--color-track);
+		scrollbar-width: thin;
+	}
+
+	::-webkit-scrollbar {
+		width: 10px;
+		height: 12px;
+		background-color: var(--color-track);
+	}
+
+	::-webkit-scrollbar-thumb {
+		border-radius: 1000px;
+		background-color: var(--color-thumb);
+		border: 2px solid var(--color-track);
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background-color: var(--gray-5);
+		background-color: var(--color-light-sky-blue);
+		cursor: pointer;
+	}
+}
+
+h1 {
+	font-size: var(--size-8, 48px);
+	/* 3rem */
+}
+
+h2 {
+	font-size: var(calc(var(--size-1) + var(--size-7)), 36px);
+	/* 2.25rem */
+}
+
+h3 {
+	font-size: var(--size-6), 28px;
+	/* 1.75rem */
+}
+
+h4 {
+	font-size: var(--size-5), 24px;
+	/* 1.5rem */
+}
+
+h5 {
+	font-size: var(calc(var(--size-1) + var(--size-5)), 22px);
+	/* 1.375rem */
+}
+
+h6 {
+	font-size: var(--size-6), 20px;
+	/* 1.25rem */
+}
